@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Todo.Application.Interfaces;
+using Todo.Application.Mappings;
+using Todo.Application.Services;
 using Todo.Domain.Interfaces;
 using Todo.Infra.Data.Context;
 using Todo.Infra.Data.Repositories;
@@ -16,6 +19,9 @@ public static class DependencyInjection
 
         services.AddScoped<ICategoryRespository, CategoryRepository>();
         services.AddScoped<ITaskRepository, TaskRepository>();
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<ITaskService, TaskService>();
+        services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
 
         return services;
     }

@@ -12,8 +12,8 @@ using Todo.Infra.Data.Context;
 namespace Todo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250105213057_Initial database")]
-    partial class Initialdatabase
+    [Migration("20250107023324_Initial_migration")]
+    partial class Initial_migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,26 +46,6 @@ namespace Todo.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Tasks related to your personal life, such as exercising, hobbies, or grocery shopping.",
-                            Name = "Personal"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Tasks related to your job or career, like meetings, deadlines, or projects.",
-                            Name = "Work"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "High-importance tasks that require immediate attention, such as paying bills or completing urgent assignments.",
-                            Name = "Priority"
-                        });
                 });
 
             modelBuilder.Entity("Todo.Domain.Entities.Task", b =>

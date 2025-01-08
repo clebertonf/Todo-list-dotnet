@@ -15,7 +15,7 @@ public sealed class Category : BaseEntity
 
     public Category(int id, string name, string description)
     {
-        DomainExceptionValidation.When(id <= 0, $"{nameof(id)} cannot be less than zero.");
+        // DomainExceptionValidation.When(id <= 0, $"{nameof(id)} cannot be less than zero.");
         ValidateDomain(name, description);
         Id = id;
     }

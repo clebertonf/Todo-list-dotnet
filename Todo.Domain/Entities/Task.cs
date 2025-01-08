@@ -19,7 +19,7 @@ public sealed class Task : BaseEntity
     public Task(int id, string title, string description, DateTime dueDate, bool isCompleted)
     {
         ValidateDomain(title, description, dueDate, isCompleted: false);
-        DomainExceptionValidation.When(id <= 0, $"{nameof(id)} cannot be less than zero.");
+       //  DomainExceptionValidation.When(id <= 0, $"{nameof(id)} cannot be less than zero.");
         Id = id;
     }
 

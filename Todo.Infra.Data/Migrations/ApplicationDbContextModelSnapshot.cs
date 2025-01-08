@@ -43,26 +43,6 @@ namespace Todo.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Tasks related to your personal life, such as exercising, hobbies, or grocery shopping.",
-                            Name = "Personal"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Tasks related to your job or career, like meetings, deadlines, or projects.",
-                            Name = "Work"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "High-importance tasks that require immediate attention, such as paying bills or completing urgent assignments.",
-                            Name = "Priority"
-                        });
                 });
 
             modelBuilder.Entity("Todo.Domain.Entities.Task", b =>

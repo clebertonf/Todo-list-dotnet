@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace Todo.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialdatabase : Migration
+    public partial class Initial_migration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,16 +46,6 @@ namespace Todo.Infra.Data.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "Description", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Tasks related to your personal life, such as exercising, hobbies, or grocery shopping.", "Personal" },
-                    { 2, "Tasks related to your job or career, like meetings, deadlines, or projects.", "Work" },
-                    { 3, "High-importance tasks that require immediate attention, such as paying bills or completing urgent assignments.", "Priority" }
                 });
 
             migrationBuilder.CreateIndex(
